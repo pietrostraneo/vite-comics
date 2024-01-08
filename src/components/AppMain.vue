@@ -5,26 +5,31 @@ export default {
         return {
             summary: [
                 {
-                    src: "../assets/img/buy-comics-digital-comics.png",
+                    img: "buy-comics-digital-comics.png",
                     label: "DIGITAL COMICS"
                 },
                 {
-                    src: "../assets/img/buy-comics-merchandise.png",
+                    img: "buy-comics-merchandise.png",
                     label: "DC MERCHANDISE"
                 },
                 {
-                    src: "../assets/img/buy-comics-subscriptions.png",
+                    img: "buy-comics-subscriptions.png",
                     label: "SUBSCRIPTION"
                 },
                 {
-                    src: "../assets/img/buy-comics-shop-locator.png",
+                    img: "buy-comics-shop-locator.png",
                     label: "COMIC SHOP LOCATOR"
                 },
                 {
-                    src: "../assets/img/buy-dc-power-visa.svg",
+                    img: "buy-dc-power-visa.svg",
                     label: "DC POWER VISA"
                 },
             ]
+        }
+    },
+    methods: {
+        getImagePath: function (imgPath) {
+            return new URL(imgPath, import.meta.url).href;
         }
     },
 }
@@ -48,8 +53,8 @@ export default {
             <div class="container">
                 <div class="row">
                     <div class="col-12 d-flex gap-1">
-                        <div v-for="elem, index in summary" :key="index">
-                            <img :src="elem.src" :alt="elem.label">
+                        <div v-for="elem, index in summary" :key="index" class="d-flex p-4 gap-2 align-items-center justify-content-center">
+                            <img :src="getImagePath(`../assets/img/${elem.img}`)" :alt="elem.label" class="img-fluid">
                             <p>{{elem.label}}</p>
                         </div>
                     </div>
@@ -67,12 +72,17 @@ main {
 }
 
 #summary {
-    background-color: cyan;
+    background-color: #0082F9;
+    color: #fff;
+
+    img {
+        width: 27%;
+    }
 }
 
 #jumbo {
     background-color: black;
-    padding: 30px;
+    padding: 50px;
 
     h2 {
         color: white;

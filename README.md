@@ -10,3 +10,5 @@ Attenzione: non fate il contenuto del main, lo farete domani (quindi le props no
 Bonus: Creare un componente aggiuntivo per gestire la fascia azzurra con le icone.
 
 In allegato trovate le immagini e lo screenshot da replicare
+
+ESERCIZIO CONSEGNATO

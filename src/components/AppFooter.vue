@@ -20,25 +20,25 @@ export default {
                         <div>
                             <h2>DC COMICS</h2>
                             <ul class="list-unstyled">
-                                <li v-for="comics, index in dc_comics" :key="index">{{comics}}</li>
+                                <li v-for="comics, index in dc_comics" :key="index"><a href="#">{{comics}}</a></li>
                             </ul>
                             <div>
                                 <h2>SHOP</h2>
                                 <ul class="list-unstyled">
-                                    <li v-for="shop, index in shop" :key="index">{{shop}}</li>
+                                    <li v-for="shop, index in shop" :key="index"><a href="#">{{shop}}</a></li>
                                 </ul>
                             </div>
                         </div>
                         <div>
                             <h2>DC</h2>
                             <ul class="list-unstyled">
-                                <li v-for="dc, index in dc" :key="index">{{dc}}</li>
+                                <li v-for="dc, index in dc" :key="index"><a href="#">{{dc}}</a></li>
                             </ul>
                         </div>
                         <div>
                             <h2>SITES</h2>
                             <ul class="list-unstyled">
-                                <li v-for="sites, index in sites" :key="index">{{sites}}</li>
+                                <li v-for="sites, index in sites" :key="index"><a href="#">{{sites}}</a></li>
                             </ul>
                         </div>
                     </div>
@@ -50,10 +50,10 @@ export default {
         <section id="links">
             <div class="container">
                 <div class="row">
-                    <div class="col-12 d-flex justify-content-between">
-                        <button class="btn btn-outline-primary text-uppercase">sign up now</button>
-                        <div class="socials d-flex align-items-center gap-2">
-                            <h2>FOLLOW US</h2>
+                    <div class="col-12 d-flex justify-content-between align-items-center">
+                        <button class="text-uppercase">sign up now!</button>
+                        <div class="socials d-flex align-items-center gap-4">
+                            <h4>FOLLOW US</h4>
                             <img src="../assets/img/footer-facebook.png" alt="facebook">
                             <img src="../assets/img/footer-twitter.png" alt="twitter">
                             <img src="../assets/img/footer-youtube.png" alt="youtube">
@@ -78,13 +78,15 @@ export default {
         font-weight: bolder;
     }
 
-    li {
+    li a {
         color: #959696;
+        text-decoration: none;
     }
 
     .bglogo {
         background-image: url(../assets/img/dc-logo-bg.png);
         background-repeat: no-repeat;
+        background-position: center;
         background-size: cover;
     }
 }
@@ -93,9 +95,21 @@ export default {
     background-color: #303030;
     padding: 20px;
 
-    h2 {
+    h4 {
         color: #0083F8;
         font-weight: bolder;
+    }
+
+    button {
+        background-color: transparent;
+        border: 2px solid #0082F9;
+        padding: 15px;
+        color: #fff;
+        transition: background-color 0.4s;
+
+        &:hover {
+            background-color: #0082F9;
+        }
     }
 }
 </style>
