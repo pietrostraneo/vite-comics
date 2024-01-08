@@ -3,7 +3,28 @@ export default {
     name: 'AppMain',
     data() {
         return {
-
+            summary: [
+                {
+                    src: "../assets/img/buy-comics-digital-comics.png",
+                    label: "DIGITAL COMICS"
+                },
+                {
+                    src: "../assets/img/buy-comics-merchandise.png",
+                    label: "DC MERCHANDISE"
+                },
+                {
+                    src: "../assets/img/buy-comics-subscriptions.png",
+                    label: "SUBSCRIPTION"
+                },
+                {
+                    src: "../assets/img/buy-comics-shop-locator.png",
+                    label: "COMIC SHOP LOCATOR"
+                },
+                {
+                    src: "../assets/img/buy-dc-power-visa.svg",
+                    label: "DC POWER VISA"
+                },
+            ]
         }
     },
 }
@@ -27,30 +48,15 @@ export default {
             <div class="container">
                 <div class="row">
                     <div class="col-12 d-flex gap-1">
-                        <div>
-                            <img src="../assets/img/buy-comics-digital-comics.png" alt="digital">
-                            <p>DIGITAL COMICS</p>
-                        </div>
-                        <div>
-                            <img src="../assets/img/buy-comics-merchandise.png" alt="merch">
-                            <p>DC MERCHANDISE</p>
-                        </div>
-                        <div>
-                            <img src="../assets/img/buy-comics-subscriptions.png" alt="sub">
-                            <p>SUBSCRIPTION</p>
-                        </div>
-                        <div>
-                            <img src="../assets/img/buy-comics-shop-locator.png" alt="shop">
-                            <p>COMIC SHOP LOCATOR</p>
-                        </div>
-                        <div>
-                            <img src="../assets/img/buy-dc-power-visa.svg" alt="visa">
-                            <p>DC POWER VISA</p>
+                        <div v-for="elem, index in summary" :key="index">
+                            <img :src="elem.src" :alt="elem.label">
+                            <p>{{elem.label}}</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+
     </main>
 </template>
 <style lang="scss" scoped>
