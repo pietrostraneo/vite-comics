@@ -6,13 +6,54 @@ export default {
             dc_comics: ['Characters', 'Comics', 'Movies', 'TV', 'Games', 'Videos', 'News'],
             dc: ['Terms Of Use', 'Privacy policy (New)', 'Ad Choices', 'Adversiting', 'Jobs', 'Subscriptions', 'Talent Workshops', 'CPSC Certificates', 'Ratings', 'Shop Help', 'Contact Us'],
             sites: ['DC', 'MAD Magazine', 'DC Kids', 'DC Universe', 'DC Power Visa'],
-            shop: ['Shop DC', 'Shop DC Collectibles']
+            shop: ['Shop DC', 'Shop DC Collectibles'],
+            summary: [
+                {
+                    img: "buy-comics-digital-comics.png",
+                    label: "DIGITAL COMICS"
+                },
+                {
+                    img: "buy-comics-merchandise.png",
+                    label: "DC MERCHANDISE"
+                },
+                {
+                    img: "buy-comics-subscriptions.png",
+                    label: "SUBSCRIPTION"
+                },
+                {
+                    img: "buy-comics-shop-locator.png",
+                    label: "COMIC SHOP LOCATOR"
+                },
+                {
+                    img: "buy-dc-power-visa.svg",
+                    label: "DC POWER VISA"
+                },
+            ]
+        }
+    },
+    methods: {
+        getImagePath: function (imgPath) {
+            return new URL(imgPath, import.meta.url).href;
         }
     },
 }
 </script>
 <template lang="">
     <footer>
+
+        <section id="summary">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 d-flex gap-1">
+                        <div v-for="elem, index in summary" :key="index" class="d-flex p-4 gap-2 align-items-center justify-content-center">
+                            <img :src="getImagePath(`../assets/img/${elem.img}`)" :alt="elem.label" class="img-fluid">
+                            <p>{{elem.label}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="lists">
             <div class="container">
                 <div class="row">
@@ -47,6 +88,7 @@ export default {
                 </div>
             </div>
         </section>
+
         <section id="links">
             <div class="container">
                 <div class="row">
@@ -64,10 +106,20 @@ export default {
                 </div>
             </div>
         </section>
+        
     </footer>
 </template>
 <style lang="scss" scoped>
 @use '../styles/generals.scss';
+
+#summary {
+    background-color: #0082F9;
+    color: #fff;
+
+    img {
+        width: 27%;
+    }
+}
 
 #lists {
     background-image: url(../assets/img/footer-bg.jpg);
