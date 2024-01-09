@@ -124,12 +124,12 @@ main {
     position: relative;
 
     .overlay {
-        display: flex;
-        align-items: center;
+        height: 40px;
         background-color: #0082F9;
         color: white;
-        font-weight: 900;
+        font-weight: bolder;
         font-size: 3rem;
+        font-family: 'Roboto', sans-serif;
         padding: 5px 50px;
         position: absolute;
         left: 150px;
@@ -138,7 +138,7 @@ main {
 }
 
 #comics {
-    padding: 15px;
+    padding: 25px;
     background-color: #303030;
 
     button {
@@ -148,6 +148,7 @@ main {
         padding: 10px;
         width: 200px;
         margin-bottom: 10px;
+        font-family: 'Roboto', sans-serif;
     }
 }
 </style>

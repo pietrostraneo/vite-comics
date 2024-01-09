@@ -44,7 +44,7 @@ export default {
         <section id="summary">
             <div class="container">
                 <div class="row">
-                    <div class="col-12 d-flex gap-1">
+                    <div class="col-12 d-flex gap-1 align-items-center">
                         <div v-for="elem, index in summary" :key="index" class="d-flex p-4 gap-2 align-items-center justify-content-center">
                             <img :src="getImagePath(`../assets/img/${elem.img}`)" :alt="elem.label" class="img-fluid">
                             <p>{{elem.label}}</p>
@@ -106,7 +106,7 @@ export default {
                 </div>
             </div>
         </section>
-        
+
     </footer>
 </template>
 <style lang="scss" scoped>
